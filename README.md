@@ -1,6 +1,19 @@
 # Flet Carousel
 ## A functional carousel widget for flet framework.
 
+Allows user to swipe or click through a list of images.
+
+```
+Parameters:
+    images (List[str]): List of image URLs
+    shuffle (bool): Shuffle the images
+    active_color (str): Color of the active dot
+    inactive_color (str): Color of the inactive dots
+
+Returns:
+    Carousel: Carousel Widget
+```
+
 
 
 
