@@ -81,7 +81,7 @@ class Carousel(ft.UserControl):
 
         if e.primary_velocity > 0:
             self.carousel_image_ref.current.src = prev_image
-            for carousel_btn in self.carousel_btn_container_ref.current._Control__previous_children:
+            for carousel_btn in self.carousel_btn_container_ref.current.controls:
                 if carousel_btn.data != prev_image:
                     carousel_btn.icon_color = self.inactive_color
                 else:
@@ -89,7 +89,7 @@ class Carousel(ft.UserControl):
             self.update()
         if e.primary_velocity < 0:
             self.carousel_image_ref.current.src = next_image
-            for carousel_btn in self.carousel_btn_container_ref.current._Control__previous_children:
+            for carousel_btn in self.carousel_btn_container_ref.current.controls:
                 if carousel_btn.data != next_image:
                     carousel_btn.icon_color = self.inactive_color
                 else:
@@ -100,7 +100,7 @@ class Carousel(ft.UserControl):
     def carousel_click(self, e):
         self.carousel_image_ref.current.src = e.control.data
         e.control.icon_color = self.active_color
-        for carousel_btn in self.carousel_btn_container_ref.current._Control__previous_children:
+        for carousel_btn in self.carousel_btn_container_ref.current.controls:
             if carousel_btn.data != e.control.data:
                 carousel_btn.icon_color = self.inactive_color
         self.update()
